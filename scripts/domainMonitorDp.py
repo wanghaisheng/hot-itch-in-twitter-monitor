@@ -64,7 +64,10 @@ class DomainMonitor:
         :return: 编码后的搜索URL
         """
         base_url = "https://www.google.com/search"
-        if time_range == '24h':
+        if time_range == '1h':
+            tbs = 'qdr:h'  # 最近24小时
+
+        elif time_range == '24h':
             tbs = 'qdr:d'  # 最近24小时
         elif time_range == '1w':
             tbs = 'qdr:w'  # 最近1周
@@ -254,7 +257,8 @@ class DomainMonitor:
         :return: 包含所有结果的DataFrame
         """
         if time_ranges is None:
-            time_ranges = ['all']
+            time_ranges = ['1h']
+            # time_ranges = ['all']
             
         all_results = []
         if len(self.sites)==0:
