@@ -4,8 +4,8 @@ from domainMonitorDp import DomainMonitor
 monitor = DomainMonitor()
 
 
-expression = os.getenv('expression', 'intext:"saas kit"')
-sites = ['twitter.com', 'youtube.com']
+expression = os.getenv('expression', 'intext:"itch.io"')
+sites = ['x.com', 'youtube.com','tiktok.com']
 monitor.sites=sites
 advanced_queries = {}
 for s in sites:
