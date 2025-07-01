@@ -100,7 +100,10 @@ class DomainMonitor:
         :return: 编码后的搜索URL
         """
         base_url = "https://www.google.com/search"
-        if time_range == '24h':
+        if time_range == '1h':
+            tbs = 'qdr:h'  # 最近24小时
+        
+        elif time_range == '24h':
             tbs = 'qdr:d'  # 最近24小时
         elif time_range == '1w':
             tbs = 'qdr:w'  # 最近1周
